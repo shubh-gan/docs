@@ -391,15 +391,14 @@
                   "in": "path"
                 },
                 {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                }
+                    "required": true,
+                    "schema": {
+                      "title": "Project Id",
+                      "type": "string"
+                    },
+                    "name": "project_id",
+                    "in": "path"
+                  }
               ],
               "responses": {
                 "200": {
