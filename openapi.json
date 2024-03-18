@@ -1261,7 +1261,7 @@
 				"token_name": {
 				  "title": "Token Name",
 				  "type": "string",
-                  "description":"The name of the token of which the user wants to revoke the access from, must be passed in the request body."
+                  "description":"The name of the token from which the access needs to be removed. This is a compulsory field in the request body."
 				}
 			  },
 			  "xml": {}
