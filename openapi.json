@@ -466,7 +466,7 @@
               ]
             }
         },
-          "/projects/{project_id}/webhook": {
+        "/projects/{project_id}/webhook": {
             "post": {
               "description": "This endpoint sets up a webhook for getting the status of the videos. \n \n Videos are created in batches. We will do a POST request to the webhook that you would provide us.\n The payload is shown below.\n `data={'abc123': {'video_url':'<Video_S3_URL>','status':True, 'inference_id': 'Inference_Id'},\n 'avs3456': {'status': False, 'inference_id':'3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c', 'error': {'status_code': 503,'message': 'Failed to generate video for inference id:3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c. Please try again later!'}}` \n \n In the above example, video was successfully generated for unique_id `'abc123'` and is ready for download. Video could not be generated for unique_id `'avs3456'`. We will return error details",
               "operationId": "update_project_webhook_post_projects__project_id__webhook_post",
@@ -565,8 +565,8 @@
                 }
               ]
             }
-          },
-          "/projects/v2": {
+        },
+        "/projects/v2": {
               "get": {
               "description": "This endpoint returns a list of all projects of the user.",
               "operationId": "get_projects_projects_get",
@@ -618,7 +618,7 @@
                 }
               ]
             }
-          }
+        }
 	},
 	"components": {
 		"schemas": {
@@ -934,7 +934,8 @@
 			  "properties": {
 				"email": {
 				  "title": "Email",
-				  "type": "string"
+				  "type": "string",
+                  "description": "The email of the user is required to login."
 				},
 				"password": {
 				  "title": "Password",
