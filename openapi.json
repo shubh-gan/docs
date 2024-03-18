@@ -289,11 +289,11 @@
                 }
               ],
               "requestBody": {
-                "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`. \n Eg. `[{\"names\": \"Manash\", \"unique_id\": \"abc123\"}]` \n \n In the `example`, we have used the tags: `email` and `unique_id`, depending on the case the individual query parameters would change.",
-                "content": {
-                  "application/json": {
-                    "schema": {
-                      "items": {
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "items": {
+                                "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`. \n Eg. `[{\"names\": \"Manash\", \"unique_id\": \"abc123\"}]` \n \n In the `example`, we have used the tags: `email` and `unique_id`, depending on the case the individual query parameters would change.",
                         "$ref": "#/components/schemas/CreateVideoBulkIndividual"
                       },
                       "type": "array",
@@ -404,6 +404,7 @@
                       "type": "string"
                     },
                     "name": "project_id",
+                    "description": "The project_id of the video for fetching its video status.",
                     "in": "path"
                 }
               ],
@@ -1280,11 +1281,13 @@
 			  "properties": {
 				"gen_status": {
 				  "title": "Gen Status",
-				  "type": "string"
+				  "type": "string",
+                  "description":"This indicated the current generation state of the particular inference,eg. nexrender_pending, succeeded etc.",
 				},
 				"video_url": {
 				  "title": "Video Url",
-				  "type": "string"
+				  "type": "string",
+                  "description":""
 				},
 				"permalink": {
 				  "title": "Permalink",
