@@ -576,7 +576,7 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/ProjectResponseIndividial"
+                          "$ref": "#/components/schemas/ProjectResponse"
                         },
                         "title": "Response Get Projects Projects Get",
                         "type": "array"
@@ -632,7 +632,7 @@
                 "minLength": 1,
                 "maxLength": 1
             },
-            "CreateVideoIndividialResponse":{
+            "CreateVideoIndividualResponse":{
                 "properties": {
                     "video_url": {
                       "title": "Created At",
