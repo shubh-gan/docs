@@ -939,7 +939,8 @@
 				},
 				"password": {
 				  "title": "Password",
-				  "type": "string"
+				  "type": "string",
+                  "description": "The password of the user is a compulsory requirement for login."
 				}
 			  },
 			  "xml": {}
