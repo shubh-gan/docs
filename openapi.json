@@ -576,7 +576,7 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/ProjectResponse"
+                          "$ref": "#/components/schemas/ProjectResponseIndividial"
                         },
                         "title": "Response Get Projects Projects Get",
                         "type": "array"
