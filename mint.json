@@ -31,14 +31,6 @@
       "pages": [
         "user/login",
         "user/create-dynamic-tokens",
-        "user/revoke-access-token"
-      ]
-    },
-    {
-      "group": "User",
-      "pages": [
-        "user/login",
-        "user/create-dynamic-tokens",
         "user/revoke-access-token",
         "user/list-users-dynamic-tokens"
       ]
