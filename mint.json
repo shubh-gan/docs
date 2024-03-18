@@ -45,8 +45,10 @@
     }
   ],
   "footerSocials": {
-    "instagram": "https://www.instagram.com/gan.aiofficial",
-    "linkedin": "https://in.linkedin.com/company/gan-ai"
+    "linkedin": "https://in.linkedin.com/company/gan-ai",
+    "facebook" :"https://www.facebook.com/GanAIOfficial",
+    "twitter": "https://twitter.com/GanAIOfficial",
+    "instagram": "https://www.instagram.com/gan.aiofficial"
   },
   "openapi": ["openapi.json"]
 }
