@@ -1,8 +1,8 @@
 {
   "name": "GAN studio",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "",
+    "light": ""
   },
   "favicon": "/favicon.svg",
   "colors": {
