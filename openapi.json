@@ -308,7 +308,13 @@
                   "description": "Successful Response",
                   "content": {
                     "application/json": {
-                      "schema": {}
+                      "schema": {
+                        "items": {
+                            "$ref": "#/components/schemas/CreateVideoResponse"
+                          },
+                          "title": "Response For Create video Bulk",
+                          "type": "array"
+                      }
                     }
                   }
                 },
