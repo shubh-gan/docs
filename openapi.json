@@ -144,20 +144,14 @@
 		},
 		"/users/revoke_access_token_v2": {
 			"description": "This endpoint can be used to revoke the access from a token that had previously been generated.",
+            "security": [
+              {
+                "JWT": [],
+                "bearerAuth":[]
+              }
+            ],
 			"delete": {
 			  "operationId": "revoke_access_token_v2_users_revoke_access_token_v2_delete",
-			  "parameters": [
-				{
-				  "name": "Authorization",
-				  "in": "header",
-				  "required": true,
-				  "example": "Bearer ACCESS_TOKEN",
-				  "schema": {
-					"type": "string"
-				  },
-				  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-				}
-			  ],
 			  "tags": [
 				"User"
 			  ],
