@@ -1469,7 +1469,7 @@
 				  "title": "User Id",
 				  "type": "string",
 				  "format": "uuid",
-                  "Description" :"This refers to the user's unique id."
+                  "description" :"This refers to the user's unique id."
 				},
 				"project_id": {
 				  "title": "Project Id",
