@@ -49,7 +49,6 @@
     {
       "group": "Project",
       "pages": [
-        "project/update-project-webhook",
         "project/set-inference-webhook",
         "project/get-projects"
       ]
