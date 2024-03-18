@@ -276,28 +276,6 @@
                 "Create Video"
               ],
               "summary": "Create Videos",
-              "parameters": [
-                {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                },
-                {
-                  "description": "To create the videos, we need the project_id.",
-                  "required": true,
-                  "schema": {
-                    "title": "Project Id",
-                    "type": "string"
-                  },
-                  "name": "project_id",
-                  "in": "query"
-                }
-              ],
               "requestBody": {
                 "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`. \n Eg. `[{\"names\": \"Manash\", \"unique_id\": \"abc123\"}]` \n \n In the `example`, we have used the tags: `email` and `unique_id`, depending on the case the individual query parameters would change.",
                 "content": {
@@ -389,28 +367,6 @@
               ],
               "summary": "Get status for an inference_id",
               "description": "This endpoint can be used to fetch the status of a video by passing the `inference_id` as the query parameter.",
-              "parameters": [
-                {
-                  "required": true,
-                  "schema": {
-                    "title": "Inference Id",
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "name": "inference_id",
-                  "in": "path"
-                },
-                {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                }
-              ],
               "responses": {
                 "200": {
                   "description": "Successful Response",
@@ -479,28 +435,6 @@
                 "Project"
               ],
               "summary": "Set Inference Webhook",
-              "parameters": [
-                {
-                  "required": true,
-                  "description": "The project_id for which the webhook needs to be set.",
-                  "schema": {
-                    "title": "Project Id",
-                    "type": "string"
-                  },
-                  "name": "project_id",
-                  "in": "path"
-                },
-                {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                }
-              ],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -585,18 +519,6 @@
             "description": "This endpoint returns a list of all projects of the user.",
             "get": {
               "operationId": "get_projects_projects_get",
-              "parameters": [
-                {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                }
-              ],
               "responses": {
                 "200": {
                   "content": {
@@ -637,7 +559,13 @@
               "tags": [
                 "Project"
               ],
-              "x-internal": false
+              "x-internal": false,
+              "security": [
+                {
+                  "JWT": [],
+                  "bearerAuth":[]
+                }
+              ]
             }
           }
 	},
