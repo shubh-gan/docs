@@ -148,7 +148,8 @@
 			  },
 			  "security": [
 				{
-				  "JWT": []
+				  "JWT": [],
+                  "bearerAuth":[]
 				}
 			  ]
 			}
