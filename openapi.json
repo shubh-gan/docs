@@ -1468,26 +1468,31 @@
 				"user_id": {
 				  "title": "User Id",
 				  "type": "string",
-				  "format": "uuid"
+				  "format": "uuid",
+                  "description" :"This refers to the user's unique id."
 				},
 				"project_id": {
 				  "title": "Project Id",
 				  "type": "string",
-				  "format": "uuid"
+				  "format": "uuid",
+				  "description" :"This refers to the project's unique id."
 				},
 				"title": {
 				  "title": "Title",
-				  "type": "string"
+				  "type": "string",
+				  "description" : "The title of the project is also returned in the reponse body."
 				},
 				"project_type": {
-				  "$ref": "#/components/schemas/ProjectType"
+				  "$ref": "#/components/schemas/ProjectType",
+				  "description": "This refers to the Project type, eg. PERSONALIZED, NON_PERSONALIZED, etc."
 				},
 				"thumbnail": {
 				  "title": "Thumbnail",
 				  "type": "string"
 				},
 				"thumbnails": {
-				  "$ref": "#/components/schemas/Thumbnails"
+				  "$ref": "#/components/schemas/Thumbnails",
+				  "description" : "The cloudfront url of the thumbnail."
 				},
 				"status": {
 				  "title": "Status",
@@ -1502,21 +1507,25 @@
 				},
 				"available_credits": {
 				  "title": "Available Credits",
-				  "type": "integer"
+				  "type": "integer",
+				  "description" : "The user's available credits."
 				},
 				"utilised_credits": {
 				  "title": "Utilised Credits",
-				  "type": "integer"
+				  "type": "integer",
+				  "description" : "The user's utilized credits."
 				},
 				"created_at": {
 				  "title": "Created At",
 				  "type": "string",
-				  "format": "date-time"
+				  "format": "date-time",
+				  "description" : "Creation time stamp"
 				},
 				"updated_at": {
 				  "title": "Updated At",
 				  "type": "string",
-				  "format": "date-time"
+				  "format": "date-time",
+				  "description" : "Updation time stamp"
 				},
 				"video": {
 				  "title": "Video",
