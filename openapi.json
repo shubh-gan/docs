@@ -1,0 +1,1200 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+	  "title": "Test collection",
+	  "version": "1.0.0",
+	  "contact": {}
+	},
+	"servers": [
+	  {
+		"url": "http://api.ganstudio.com"
+	  }
+	],
+	"paths": {
+		"/users/login": {
+			"description": "This endpoint can be used for login. The response is an access token which needs to be used in the Authorization header in the future API calls.",
+			"post": {
+			  "operationId": "login_users_login_post",
+			  "tags": [
+				"User"
+			  ],
+			  "summary": "Login",
+			  "requestBody": {
+				"description": "The request body includes user email and password as compulsory fields.",
+				"content": {
+				  "application/json": {
+					"schema": {
+					  "$ref": "#/components/schemas/UserLogin"
+					}
+				  }
+				},
+				"required": true
+			  },
+			  "responses": {
+				"200": {
+				  "description": "Successful Response",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/LoginResponseBody"
+					  }
+					}
+				  }
+				},
+				"404": {
+				  "description": "Entity Not Found Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/EntityNotFoundException"
+					  }
+					}
+				  }
+				},
+				"422": {
+				  "description": "Validation Error",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/ValidationException"
+					  }
+					}
+				  }
+				}
+			  }
+			}
+		},
+		"/users/create_dynamic_token_v2": {
+			"description": "This endpoint can be used to provide access tokens with a desired expiration time. Please save the token as it will be displayed only once.",
+			"post": {
+			  "parameters": [
+				{
+				  "name": "Authorization",
+				  "in": "header",
+				  "required": true,
+				  "example": "Bearer ACCESS_TOKEN",
+				  "schema": {
+					"type": "string"
+				  },
+				  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+				}
+			  ],
+			  "operationId": "create_dynamic_token_v2_users_create_dynamic_token_v2_post",
+			  "tags": [
+				"User"
+			  ],
+			  "summary": "Create Dynamic Tokens",
+			  "requestBody": {
+				"content": {
+				  "application/json": {
+					"schema": {
+					  "$ref": "#/components/schemas/TokenPayloadV2"
+					}
+				  }
+				},
+				"required": true
+			  },
+			  "responses": {
+				"200": {
+				  "description": "Successful Response",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/DynamicTokenResponse"
+					  }
+					}
+				  }
+				},
+				"401": {
+				  "description": "Unauthorized Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/UnauthorizedException"
+					  }
+					}
+				  }
+				},
+				"404": {
+				  "description": "Entity Not Found Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/EntityNotFoundException"
+					  }
+					}
+				  }
+				},
+				"422": {
+				  "description": "Validation Error",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/ValidationException"
+					  }
+					}
+				  }
+				},
+				"500": {
+				  "description": "Process Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/ProcessException"
+					  }
+					}
+				  }
+				}
+			  },
+			  "security": [
+				{
+				  "JWT": []
+				}
+			  ]
+			}
+		},
+		"/users/revoke_access_token_v2": {
+			"description": "This endpoint can be used to revoke the access from a token that had previously been generated.",
+			"delete": {
+			  "operationId": "revoke_access_token_v2_users_revoke_access_token_v2_delete",
+			  "parameters": [
+				{
+				  "name": "Authorization",
+				  "in": "header",
+				  "required": true,
+				  "example": "Bearer ACCESS_TOKEN",
+				  "schema": {
+					"type": "string"
+				  },
+				  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+				}
+			  ],
+			  "tags": [
+				"User"
+			  ],
+			  "summary": "Revoke Access Token",
+			  "requestBody": {
+				"description": "Name of the token from which access needs to be revoked.",
+				"content": {
+				  "application/json": {
+					"schema": {
+					  "$ref": "#/components/schemas/RevokeTokenPayload"
+					}
+				  }
+				},
+				"required": true
+			  },
+			  "responses": {
+				"200": {
+				  "description": "Successful Response",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/SuccessResponse"
+					  }
+					}
+				  }
+				},
+				"401": {
+				  "description": "Unauthorized Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/UnauthorizedException"
+					  }
+					}
+				  }
+				},
+				"404": {
+				  "description": "Entity Not Found Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/EntityNotFoundException"
+					  }
+					}
+				  }
+				},
+				"500": {
+				  "description": "Process Exception",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"$ref": "#/components/schemas/ProcessException"
+					  }
+					}
+				  }
+				}
+			  },
+			  "security": [
+				{
+				  "JWT": []
+				}
+			  ]
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"SuccessResponse": {
+			  "title": "SuccessResponse",
+			  "type": "object",
+			  "required": [
+				"success"
+			  ],
+			  "properties": {
+				"success": {
+				  "title": "success",
+				  "type": "boolean",
+				  "default": true
+				}
+			  }
+			},
+			"LoginResponseBody": {
+			  "title": "LoginResponseBody",
+			  "type": "object",
+			  "required": [
+				"access_token",
+				"refresh_token"
+			  ],
+			  "properties": {
+				"access_token": {
+				  "title": "access_token",
+				  "type": "string",
+				  "default": "<ACCESS_TOKEN>"
+				},
+				"refresh_token": {
+				  "title": "refresh_token",
+				  "type": "string",
+				  "default": "<REFRESH_TOKEN>"
+				}
+			  }
+			},
+			"EntityNotFoundException": {
+			  "title": "EntityNotFoundException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "404"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "EntityNotFoundException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"AuthenticationException": {
+			  "title": "AuthenticationException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "403"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "AuthenticationException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"ValidationException": {
+			  "title": "ValidationException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "422"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "ValidationException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"ProcessException": {
+			  "title": "ProcessException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "500"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "ProcessException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"PaymentException": {
+			  "title": "PaymentException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "402"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "PaymentException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"UnauthorizedException": {
+			  "title": "UnauthorizedException",
+			  "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "401"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "UnauthorizedException"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
+				}
+			  }
+			},
+			"CreateVideoBulkIndividual": {
+			  "title": "CreateVideoBulkIndividual",
+			  "type": "object",
+			  "properties": {},
+			  "xml": {}
+			},
+			"CreateVideoBulk": {
+			  "type": "array",
+			  "items": {
+				"$ref": "#/components/schemas/CreateVideoBulkIndividual"
+			  },
+			  "minItems": 1,
+			  "maxItems": 1,
+			  "minLength": 1,
+			  "maxLength": 1
+			},
+			"DeliveryType": {
+			  "title": "DeliveryType",
+			  "enum": [
+				"gan_studio_urls",
+				"imi_connect",
+				"hubspot",
+				"klaviyo",
+				"interakt",
+				"instagram",
+				"slack",
+				"mailchimp_email",
+				"twilio",
+				"whatsapp_interakt",
+				"inference_webhook",
+				"custom_delivery",
+				"apollo",
+				"outreach",
+				"follow_up_boss",
+				"podio",
+				"keap",
+				"salesforce",
+				"podium",
+				"zapier_webhook"
+			  ],
+			  "type": "string",
+			  "description": "An enumeration."
+			},
+			"HTTPValidationError": {
+			  "title": "HTTPValidationError",
+			  "type": "object",
+			  "properties": {
+				"detail": {
+				  "title": "Detail",
+				  "type": "array",
+				  "items": {
+					"$ref": "#/components/schemas/ValidationError"
+				  }
+				}
+			  }
+			},
+			"UserLogin": {
+			  "title": "UserLogin",
+			  "required": [
+				"email",
+				"password"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"email": {
+				  "title": "Email",
+				  "type": "string",
+				  "default": "<User@mail.com>"
+				},
+				"password": {
+				  "title": "Password",
+				  "type": "string",
+				  "default": "<User1_Password>"
+				}
+			  },
+			  "xml": {}
+			},
+			"ValidationError": {
+			  "title": "ValidationError",
+			  "required": [
+				"loc",
+				"msg",
+				"type"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"loc": {
+				  "title": "Location",
+				  "type": "array",
+				  "items": {
+					"type": "string"
+				  }
+				},
+				"msg": {
+				  "title": "Message",
+				  "type": "string"
+				},
+				"type": {
+				  "title": "Error Type",
+				  "type": "string"
+				}
+			  }
+			},
+			"ExpiryTime": {
+			  "title": "ExpiryTime",
+			  "type": "object",
+			  "required": [
+				"minutes",
+				"hours",
+				"days"
+			  ],
+			  "properties": {
+				"days": {
+				  "title": "Days",
+				  "type": "integer",
+				  "default": 0
+				},
+				"hours": {
+				  "title": "Hours",
+				  "type": "integer",
+				  "default": 0
+				},
+				"minutes": {
+				  "title": "Minutes",
+				  "type": "integer",
+				  "default": 0
+				}
+			  }
+			},
+			"DynamicTokenResponse": {
+			  "title": "DynamicTokenResponse",
+			  "required": [
+				"access_token"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"access_token": {
+				  "title": "Access Token",
+				  "type": "string",
+				  "default": "ACCESS_TOKEN_PLEASE_SAVE_IT"
+				}
+			  },
+			  "xml": {}
+			},
+			"TokenPayload": {
+			  "title": "TokenPayload",
+			  "type": "object",
+			  "properties": {
+				"never_expire": {
+				  "title": "Never Expire",
+				  "type": "boolean",
+				  "default": true
+				},
+				"expiry_time": {
+				  "$ref": "#/components/schemas/ExpiryTime"
+				}
+			  }
+			},
+			"ProjectResponse": {
+			  "type": "array",
+			  "items": {
+				"$ref": "#/components/schemas/ProjectResponseIndividial"
+			  },
+			  "minItems": 1,
+			  "maxItems": 1,
+			  "minLength": 1,
+			  "maxLength": 1
+			},
+			"ProjectResponseIndividial": {
+			  "properties": {
+				"created_at": {
+				  "format": "date-time",
+				  "title": "Created At",
+				  "type": "string"
+				},
+				"description": {
+				  "title": "Description",
+				  "type": "string"
+				},
+				"inference_webhook": {
+				  "$ref": "#/components/schemas/InferenceWebhook"
+				},
+				"language": {
+				  "title": "Language",
+				  "type": "string"
+				},
+				"project_id": {
+				  "format": "uuid",
+				  "title": "Project Id",
+				  "type": "string"
+				},
+				"status": {
+				  "title": "Status",
+				  "type": "string"
+				},
+				"tags": {
+				  "$ref": "#/components/schemas/ProjectTags"
+				},
+				"template": {
+				  "$ref": "#/components/schemas/ProjectTemplate"
+				},
+				"template_id": {
+				  "title": "Template Id",
+				  "type": "string"
+				},
+				"template_type": {
+				  "title": "Template Type",
+				  "type": "string"
+				},
+				"thumbnail": {
+				  "title": "Thumbnail",
+				  "type": "string"
+				},
+				"title": {
+				  "title": "Title",
+				  "type": "string"
+				},
+				"updated_at": {
+				  "format": "date-time",
+				  "title": "Updated At",
+				  "type": "string"
+				},
+				"user_id": {
+				  "format": "uuid",
+				  "title": "User Id",
+				  "type": "string"
+				}
+			  },
+			  "required": [
+				"user_id",
+				"project_id",
+				"title",
+				"created_at",
+				"updated_at"
+			  ],
+			  "title": "ProjectResponse",
+			  "type": "object"
+			},
+			"ProjectTags": {
+			  "properties": {
+				"colors": {
+				  "items": {
+					"type": "string"
+				  },
+				  "title": "Colors",
+				  "type": "array"
+				},
+				"names": {
+				  "items": {
+					"type": "string"
+				  },
+				  "title": "Names",
+				  "type": "array"
+				}
+			  },
+			  "title": "ProjectTags",
+			  "type": "object"
+			},
+			"InferenceWebhook": {
+			  "title": "InferenceWebhook",
+			  "required": [
+				"enable",
+				"url"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"enable": {
+				  "title": "Enable",
+				  "type": "boolean",
+				  "default": true
+				},
+				"url": {
+				  "title": "Url",
+				  "type": "string",
+				  "default": "<Insert_Webhook_URL_here>",
+				  "description": "The url of your webhook."
+				},
+				"Authorization": {
+				  "title": "Authorization",
+				  "type": "string",
+				  "default": "Bearer <Insert_the_token_here>",
+				  "description": "The token must follow the `bearer` format."
+				}
+			  },
+			  "xml": {}
+			},
+			"ProjectTemplate": {
+			  "properties": {
+				"calendly": {
+				  "title": "Calendly",
+				  "type": "string"
+				},
+				"cta_link": {
+				  "$ref": "#/components/schemas/CTALink"
+				},
+				"cta_text": {
+				  "title": "Cta Text",
+				  "type": "string"
+				},
+				"google_form": {
+				  "title": "Google Form",
+				  "type": "string"
+				},
+				"logo": {
+				  "$ref": "#/components/schemas/LogoTemplate"
+				},
+				"media": {
+				  "default": {},
+				  "title": "Media",
+				  "type": "object"
+				},
+				"meta_description": {
+				  "title": "Meta Description",
+				  "type": "string"
+				},
+				"meta_title": {
+				  "title": "Meta Title",
+				  "type": "string"
+				},
+				"razorpay": {
+				  "title": "Razorpay",
+				  "type": "string"
+				},
+				"text": {
+				  "title": "Text",
+				  "type": "string"
+				},
+				"title": {
+				  "title": "Title",
+				  "type": "string"
+				}
+			  },
+			  "title": "ProjectTemplate",
+			  "type": "object"
+			},
+			"CTALink": {
+			  "properties": {
+				"personalized_links": {
+				  "default": false,
+				  "title": "Personalized Links",
+				  "type": "boolean"
+				},
+				"url": {
+				  "title": "Url",
+				  "type": "string"
+				}
+			  },
+			  "title": "CTALink",
+			  "type": "object"
+			},
+			"LogoTemplate": {
+			  "properties": {
+				"s3_object": {
+				  "default": false,
+				  "title": "S3 Object",
+				  "type": "boolean"
+				},
+				"url": {
+				  "title": "Url",
+				  "type": "string"
+				}
+			  },
+			  "title": "LogoTemplate",
+			  "type": "object"
+			},
+			"TokenPayloadV2": {
+			  "title": "TokenPayloadV2",
+			  "required": [
+				"expiry_time",
+				"token_name"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"expiry_time": {
+				  "$ref": "#/components/schemas/ExpiryTime"
+				},
+				"token_name": {
+				  "title": "Token Name",
+				  "type": "string",
+				  "default": "<Token_Name>"
+				}
+			  },
+			  "xml": {}
+			},
+			"RevokeTokenPayload": {
+			  "title": "RevokeTokenPayload",
+			  "required": [
+				"token_name"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"token_name": {
+				  "title": "Token Name",
+				  "type": "string",
+				  "default": "<TOKEN_NAME>"
+				}
+			  },
+			  "xml": {}
+			},
+			"VideoStatusResponse": {
+			  "title": "VideoStatusResponse",
+			  "required": [
+				"gen_status",
+				"video_url",
+				"permalink",
+				"thumbnail_url",
+				"smart_url"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"gen_status": {
+				  "title": "Gen Status",
+				  "type": "string",
+				  "default": "succeeded"
+				},
+				"video_url": {
+				  "title": "Video Url",
+				  "type": "string",
+				  "default": "<Video_Url>"
+				},
+				"permalink": {
+				  "title": "Permalink",
+				  "type": "string",
+				  "default": "<Permalink_Of_The_Video>"
+				},
+				"thumbnail_url": {
+				  "title": "Thumbnail Url",
+				  "type": "string",
+				  "default": "<Thumbnail_Url>"
+				},
+				"smart_url": {
+				  "title": "Smart Url",
+				  "type": "string",
+				  "default": "<Smart_Url>"
+				}
+			  },
+			  "xml": {}
+			},
+			"VideoStatusFailedResponse500": {
+			  "title": "VideoStatusFailedResponse500",
+			  "required": [
+				"gen_status",
+				"error"
+			  ],
+			  "properties": {
+				"gen_status": {
+				  "title": "Gen Status",
+				  "type": "string",
+				  "default": "failed"
+				},
+				"error": {
+				  "required": [
+					"status_code",
+					"message"
+				  ],
+				  "properties": {
+					"status_code": {
+					  "title": "status_code",
+					  "type": "string",
+					  "default": "500"
+					},
+					"message": {
+					  "title": "message",
+					  "type": "string",
+					  "default": "Failed to generate video for inference id: <Inference_Id>. Please contact admin!"
+					}
+				  }
+				}
+			  }
+			},
+			"VideoStatusFailedResponse422": {
+			  "title": "VideoStatusFailedResponse422",
+			  "required": [
+				"gen_status",
+				"error"
+			  ],
+			  "properties": {
+				"gen_status": {
+				  "title": "Gen Status",
+				  "type": "string",
+				  "default": "failed"
+				},
+				"error": {
+				  "required": [
+					"status_code",
+					"message"
+				  ],
+				  "properties": {
+					"status_code": {
+					  "title": "status_code",
+					  "type": "string",
+					  "default": "422"
+					},
+					"message": {
+					  "title": "message",
+					  "type": "string",
+					  "default": "Invalid payload for inference id: <Inference_Id>. Please rectify payload and try again."
+					}
+				  }
+				}
+			  }
+			},
+			"VideoStatusFailedResponse503": {
+			  "title": "VideoStatusFailedResponse422",
+			  "required": [
+				"gen_status",
+				"error"
+			  ],
+			  "properties": {
+				"gen_status": {
+				  "title": "Gen Status",
+				  "type": "string",
+				  "default": "failed"
+				},
+				"error": {
+				  "required": [
+					"status_code",
+					"message"
+				  ],
+				  "properties": {
+					"status_code": {
+					  "title": "status_code",
+					  "type": "string",
+					  "default": "503"
+					},
+					"message": {
+					  "title": "message",
+					  "type": "string",
+					  "default": "Failed to generate video for inference id: <Inference_Id>. Please try again later!"
+					}
+				  }
+				}
+			  }
+			},
+			"app__schemas__inference__ErrorDetails": {
+			  "title": "ErrorDetails",
+			  "type": "object",
+			  "properties": {
+				"status_code": {
+				  "title": "Status Code",
+				  "type": "integer",
+				  "default": "503"
+				},
+				"message": {
+				  "title": "Message",
+				  "type": "string",
+				  "default": "Failed to generate video for inference id: <INFERENCE_ID>. Please try again later!"
+				}
+			  }
+			},
+			"ProjectType": {
+			  "title": "ProjectType",
+			  "enum": [
+				"PERSONALIZED",
+				"PERSONALIZED_INSTANT",
+				"NON_PERSONALIZED"
+			  ],
+			  "description": "An enumeration.",
+			  "xml": {}
+			},
+			"GetProjectsResponseV2": {
+			  "title": "GetProjectsResponseV2",
+			  "required": [
+				"data",
+				"size",
+				"unpublished_projects"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"data": {
+				  "title": "Data",
+				  "type": "array",
+				  "items": {
+					"$ref": "#/components/schemas/ProjectResponsePartial"
+				  }
+				},
+				"size": {
+				  "title": "Size",
+				  "type": "integer"
+				},
+				"unpublished_projects": {
+				  "title": "Unpublished Projects",
+				  "type": "integer"
+				}
+			  },
+			  "xml": {}
+			},
+			"ProjectResponsePartial": {
+			  "title": "ProjectResponsePartial",
+			  "required": [
+				"user_id",
+				"project_id",
+				"title",
+				"project_type",
+				"created_at",
+				"updated_at"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"user_id": {
+				  "title": "User Id",
+				  "type": "string",
+				  "format": "uuid"
+				},
+				"project_id": {
+				  "title": "Project Id",
+				  "type": "string",
+				  "format": "uuid"
+				},
+				"title": {
+				  "title": "Title",
+				  "type": "string"
+				},
+				"project_type": {
+				  "$ref": "#/components/schemas/ProjectType"
+				},
+				"thumbnail": {
+				  "title": "Thumbnail",
+				  "type": "string"
+				},
+				"thumbnails": {
+				  "$ref": "#/components/schemas/Thumbnails"
+				},
+				"status": {
+				  "title": "Status",
+				  "type": "string"
+				},
+				"language": {
+				  "title": "Language",
+				  "type": "string"
+				},
+				"tags": {
+				  "$ref": "#/components/schemas/ProjectTags"
+				},
+				"available_credits": {
+				  "title": "Available Credits",
+				  "type": "integer"
+				},
+				"utilised_credits": {
+				  "title": "Utilised Credits",
+				  "type": "integer"
+				},
+				"created_at": {
+				  "title": "Created At",
+				  "type": "string",
+				  "format": "date-time"
+				},
+				"updated_at": {
+				  "title": "Updated At",
+				  "type": "string",
+				  "format": "date-time"
+				},
+				"video": {
+				  "title": "Video",
+				  "type": "string"
+				},
+				"training_job_id": {
+				  "title": "Training Job Id",
+				  "type": "string"
+				},
+				"srt": {
+				  "title": "Srt",
+				  "type": "string"
+				},
+				"srt_target_language": {
+				  "title": "Srt Target Language",
+				  "type": "string"
+				},
+				"voice_path": {
+				  "title": "Voice Path",
+				  "type": "string"
+				},
+				"smart_url": {
+				  "title": "Smart Url",
+				  "type": "string"
+				},
+				"recording_script": {
+				  "title": "Recording Script",
+				  "type": "string"
+				},
+				"data_plane_id": {
+				  "title": "Data Plane Id",
+				  "type": "string",
+				  "format": "uuid"
+				}
+			  },
+			  "xml": {}
+			},
+			"Thumbnails": {
+			  "title": "Thumbnails",
+			  "type": "object",
+			  "properties": {
+				"thumbnail_png": {
+				  "title": "Thumbnail Png",
+				  "type": "string",
+				  "default": ""
+				},
+				"thumbnail_play_png": {
+				  "title": "Thumbnail Play Png",
+				  "type": "string",
+				  "default": ""
+				},
+				"thumbnail_gif": {
+				  "title": "Thumbnail Gif",
+				  "type": "string",
+				  "default": ""
+				},
+				"thumbnail_play_gif": {
+				  "title": "Thumbnail Play Gif",
+				  "type": "string",
+				  "default": ""
+				},
+				"custom_thumbnail": {
+				  "title": "Custom Thumbnail",
+				  "type": "string",
+				  "default": ""
+				}
+			  }
+			},
+			"ListUserDynamicTokens": {
+			  "title": "ListUserDynamicTokens",
+			  "required": [
+				"tokens"
+			  ],
+			  "type": "object",
+			  "properties": {
+				"tokens": {
+				  "type": "array",
+				  "items": {
+					"$ref": "#/components/schemas/ListUserDynamicTokensIndividual"
+				  },
+				  "minItems": 1,
+				  "maxItems": 2
+				}
+			  }
+			},
+			"ListUserDynamicTokensIndividual": {
+			  "title": "ListUserDynamicTokensIndividual",
+			  "required": [
+				"token_name",
+				"expiration_time"
+			  ],
+			  "properties": {
+				"token_name": {
+				  "type": "string",
+				  "default": "<TOKEN_NAME>"
+				},
+				"expiration_time": {
+				  "type": "string",
+				  "default": "<EXPIRATION_TIME>"
+				}
+			  }
+			}
+		  },
+	  "securitySchemes": {
+		"bearerAuth": {
+		  "type": "http",
+		  "scheme": "bearer"
+		}
+	  }
+	},
+	"tags": [
+		{
+			"name": "Project",
+			"description": "Operations related to projects."
+		},
+		{
+			"name": "User",
+			"description": "Operations related to users."
+		}
+	]
+}
