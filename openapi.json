@@ -1207,28 +1207,23 @@
 			  "properties": {
 				"gen_status": {
 				  "title": "Gen Status",
-				  "type": "string",
-				  "default": "succeeded"
+				  "type": "string"
 				},
 				"video_url": {
 				  "title": "Video Url",
-				  "type": "string",
-				  "default": "<Video_Url>"
+				  "type": "string"
 				},
 				"permalink": {
 				  "title": "Permalink",
-				  "type": "string",
-				  "default": "<Permalink_Of_The_Video>"
+				  "type": "string"
 				},
 				"thumbnail_url": {
 				  "title": "Thumbnail Url",
-				  "type": "string",
-				  "default": "<Thumbnail_Url>"
+				  "type": "string"
 				},
 				"smart_url": {
 				  "title": "Smart Url",
-				  "type": "string",
-				  "default": "<Smart_Url>"
+				  "type": "string"
 				}
 			  },
 			  "xml": {}
