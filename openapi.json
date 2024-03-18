@@ -949,8 +949,7 @@
 			  "properties": {
 				"never_expire": {
 				  "title": "Never Expire",
-				  "type": "boolean",
-				  "default": true
+				  "type": "boolean"
 				},
 				"expiry_time": {
 				  "$ref": "#/components/schemas/ExpiryTime"
@@ -1073,7 +1072,6 @@
 				"url": {
 				  "title": "Url",
 				  "type": "string",
-				  "default": "<Insert_Webhook_URL_here>",
 				  "description": "The url of your webhook."
 				},
 				"Authorization": {
@@ -1177,8 +1175,7 @@
 				},
 				"token_name": {
 				  "title": "Token Name",
-				  "type": "string",
-				  "default": "<Token_Name>"
+				  "type": "string"
 				}
 			  },
 			  "xml": {}
@@ -1192,8 +1189,7 @@
 			  "properties": {
 				"token_name": {
 				  "title": "Token Name",
-				  "type": "string",
-				  "default": "<TOKEN_NAME>"
+				  "type": "string"
 				}
 			  },
 			  "xml": {}
