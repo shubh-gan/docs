@@ -61,11 +61,5 @@
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
-  "openapi": ["openapi.json"],
-  "api": {
-    "auth": {
-        "method": "bearer"
-    }
-}
-
+  "openapi": ["openapi.json"]
 }
