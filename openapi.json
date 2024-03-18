@@ -232,7 +232,492 @@
 				}
 			  ]
 			}
-		}
+		},
+        "/users/list_user_dynamic_tokens": {
+            "get": {
+              "operationId": "list_user_dynamic_tokens_users_list_user_dynamic_tokens_get",
+              "tags": [
+                "User"
+              ],
+              "parameters": [
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "example": "Bearer ACCESS_TOKEN",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+                }
+              ],
+              "summary": "List User's Dynamic Tokens",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ListUserDynamicTokens"
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/UnauthorizedException"
+                      }
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Entity Not Found Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/EntityNotFoundException"
+                      }
+                    }
+                  }
+                },
+                "500": {
+                  "description": "Process Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ProcessException"
+                      }
+                    }
+                  }
+                }
+              },
+              "security": [
+                {
+                  "JWT": []
+                }
+              ]
+            }
+          },
+          "/create_video/bulk": {
+            "post": {
+              "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request data.",
+              "operationId": "create_videos_create_video_bulk_post",
+              "tags": [
+                "Create Video"
+              ],
+              "summary": "Create Videos",
+              "parameters": [
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "example": "Bearer ACCESS_TOKEN",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+                },
+                {
+                  "description": "To create the videos, we need the project_id.",
+                  "required": true,
+                  "schema": {
+                    "title": "Project Id",
+                    "type": "string"
+                  },
+                  "name": "project_id",
+                  "in": "query"
+                }
+              ],
+              "requestBody": {
+                "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`. \n Eg. `[{\"names\": \"Manash\", \"unique_id\": \"abc123\"}]` \n \n In the `example`, we have used the tags: `email` and `unique_id`, depending on the case the individual query parameters would change.",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "items": {
+                        "$ref": "#/components/schemas/CreateVideoBulkIndividual"
+                      },
+                      "type": "array",
+                      "title": "create_video_bulk_query_set"
+                    }
+                  }
+                },
+                "required": true
+              },
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/UnauthorizedException"
+                      }
+                    }
+                  }
+                },
+                "402": {
+                  "description": "Payment Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/PaymentException"
+                      }
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Entity Not Found Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/EntityNotFoundException"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ValidationException"
+                      }
+                    }
+                  }
+                },
+                "500": {
+                  "description": "Process Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ProcessException"
+                      }
+                    }
+                  }
+                }
+              },
+              "security": [
+                {
+                  "JWT": []
+                }
+              ]
+            }
+          },
+          "/projects/{project_id}/inference/{inference_id}/video_status": {
+            "get": {
+              "operationId": "get_video_status_projects__project_id__inference__inference_id__video_status_get",
+              "tags": [
+                "Inference"
+              ],
+              "summary": "Get status for an inference_id",
+              "description": "This endpoint can be used to fetch the status of a video by passing the `inference_id` as the query parameter.",
+              "parameters": [
+                {
+                  "required": true,
+                  "schema": {
+                    "title": "Inference Id",
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": "inference_id",
+                  "in": "path"
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "example": "Bearer ACCESS_TOKEN",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/VideoStatusResponse"
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/UnauthorizedException"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/VideoStatusFailedResponse422"
+                      }
+                    }
+                  }
+                },
+                "500": {
+                  "description": "Failure",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/VideoStatusFailedResponse500"
+                      }
+                    }
+                  }
+                },
+                "503": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/VideoStatusFailedResponse503"
+                      }
+                    }
+                  }
+                }
+              },
+              "security": [
+                {
+                  "JWT": []
+                }
+              ]
+            }
+          },
+          "/projects/{project_id}/webhook": {
+            "put": {
+              "operationId": "update_project_webhook_projects__project_id__webhook_put",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "project_id",
+                  "required": true,
+                  "schema": {
+                    "title": "Project Id",
+                    "type": "string"
+                  }
+                }
+              ],
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/InferenceWebhook"
+                    }
+                  }
+                },
+                "required": true
+              },
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  },
+                  "description": "Successful Response"
+                },
+                "422": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  },
+                  "description": "Validation Error"
+                }
+              },
+              "summary": "Update Project Webhook",
+              "tags": [
+                "Project"
+              ]
+            },
+            "post": {
+              "description": "This endpoint sets up a webhook for getting the status of the videos. \n \n Videos are created in batches. We will do a POST request to the webhook that you would provide us.\n The payload is shown below.\n `data={'abc123': {'video_url':'<Video_S3_URL>','status':True, 'inference_id': 'Inference_Id'},\n 'avs3456': {'status': False, 'inference_id':'3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c', 'error': {'status_code': 503,'message': 'Failed to generate video for inference id:3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c. Please try again later!'}}` \n \n In the above example, video was successfully generated for unique_id `'abc123'` and is ready for download. Video could not be generated for unique_id `'avs3456'`. We will return error details",
+              "operationId": "update_project_webhook_post_projects__project_id__webhook_post",
+              "tags": [
+                "Project"
+              ],
+              "summary": "Set Inference Webhook",
+              "parameters": [
+                {
+                  "required": true,
+                  "description": "The project_id for which the webhook needs to be set.",
+                  "schema": {
+                    "title": "Project Id",
+                    "type": "string"
+                  },
+                  "name": "project_id",
+                  "in": "path"
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "example": "Bearer ACCESS_TOKEN",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+                }
+              ],
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/InferenceWebhook"
+                    }
+                  }
+                },
+                "required": true
+              },
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/InferenceWebhook"
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/UnauthorizedException"
+                      }
+                    }
+                  }
+                },
+                "403": {
+                  "description": "Authentication Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/AuthenticationException"
+                      }
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Entity Not Found Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/EntityNotFoundException"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ValidationException"
+                      }
+                    }
+                  }
+                },
+                "500": {
+                  "description": "Process Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ProcessException"
+                      }
+                    }
+                  }
+                }
+              },
+              "security": [
+                {
+                  "JWT": []
+                }
+              ]
+            }
+          },
+          "/projects/v2": {
+            "description": "This endpoint returns a list of all projects of the user.",
+            "get": {
+              "operationId": "get_projects_projects_get",
+              "parameters": [
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "example": "Bearer ACCESS_TOKEN",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "items": {
+                          "$ref": "#/components/schemas/ProjectResponse"
+                        },
+                        "title": "Response Get Projects Projects Get",
+                        "type": "array"
+                      }
+                    }
+                  },
+                  "description": "Successful Response"
+                },
+                "401": {
+                  "description": "Unauthorized Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/UnauthorizedException"
+                      }
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Entity Not Found Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/EntityNotFoundException"
+                      }
+                    }
+                  }
+                }
+              },
+              "summary": "Get Projects",
+              "tags": [
+                "Project"
+              ],
+              "x-internal": false
+            }
+          }
 	},
 	"components": {
 		"schemas": {
