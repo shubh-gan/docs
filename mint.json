@@ -88,5 +88,5 @@
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
-  "openapi": "https://mintlify.com/specs/v2/openapi.json",
+  "openapi": "https://mintlify.com/specs/v2/openapi.json"
 }
