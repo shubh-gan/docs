@@ -4,7 +4,7 @@
     "dark": "/logo/gan_updated_logo.svg",
     "light": "/logo/gan_updated_logo.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/gan_logo.svg",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
