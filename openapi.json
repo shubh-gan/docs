@@ -144,16 +144,10 @@
 		},
 		"/users/revoke_access_token_v2": {
 			"description": "This endpoint can be used to revoke the access from a token that had previously been generated.",
-            "security": [
-              {
-                "JWT": [],
-                "bearerAuth":[]
-              }
-            ],
 			"delete": {
-			  "operationId": "revoke_access_token_v2_users_revoke_access_token_v2_delete",
-			  "tags": [
-				"User"
+                "operationId": "revoke_access_token_v2_users_revoke_access_token_v2_delete",
+                "tags": [
+                    "User"
 			  ],
 			  "summary": "Revoke Access Token",
 			  "requestBody": {
@@ -211,7 +205,8 @@
 			  },
 			  "security": [
 				{
-				  "JWT": []
+				  "JWT": [],
+                  "bearerAuth":[]
 				}
 			  ]
 			}
