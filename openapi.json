@@ -454,7 +454,8 @@
               },
               "security": [
                 {
-                  "JWT": []
+                  "JWT": [],
+                  "bearerAuth" :[]
                 }
               ]
             }
