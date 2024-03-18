@@ -705,7 +705,7 @@
 				"access_token": {
 				  "title": "access_token",
 				  "type": "string",
-                  "description": "On successful login an access token is returned, which needs to be saved and used in the future"
+                  "description": "On successful login an access token is returned, which needs to be saved and used in the future api calls."
 				},
 				"refresh_token": {
 				  "title": "refresh_token",
@@ -1006,7 +1006,8 @@
 				"access_token": {
 				  "title": "Access Token",
 				  "type": "string",
-				  "default": "ACCESS_TOKEN_PLEASE_SAVE_IT"
+				  "default": "ACCESS_TOKEN_PLEASE_SAVE_IT",
+                  "description" : "This access token has the requested expiration time and must be saved by the user."
 				}
 			  },
 			  "xml": {}
@@ -1239,11 +1240,13 @@
 			  "type": "object",
 			  "properties": {
 				"expiry_time": {
-				  "$ref": "#/components/schemas/ExpiryTime"
+				  "$ref": "#/components/schemas/ExpiryTime",
+                  "description" : "The desired expiration time for the access token must follow such a format."
 				},
 				"token_name": {
 				  "title": "Token Name",
-				  "type": "string"
+				  "type": "string",
+                  "description": "The name that you want to assign to the token must be sent with the request. A user can't request two tokens with the same name."
 				}
 			  },
 			  "xml": {}
