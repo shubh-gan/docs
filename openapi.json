@@ -640,13 +640,11 @@
 			  "properties": {
 				"access_token": {
 				  "title": "access_token",
-				  "type": "string",
-				  "default": "<ACCESS_TOKEN>"
+				  "type": "string"
 				},
 				"refresh_token": {
 				  "title": "refresh_token",
-				  "type": "string",
-				  "default": "<REFRESH_TOKEN>"
+				  "type": "string"
 				}
 			  }
 			},
@@ -872,13 +870,11 @@
 			  "properties": {
 				"email": {
 				  "title": "Email",
-				  "type": "string",
-				  "default": "<User@mail.com>"
+				  "type": "string"
 				},
 				"password": {
 				  "title": "Password",
-				  "type": "string",
-				  "default": "<User1_Password>"
+				  "type": "string"
 				}
 			  },
 			  "xml": {}
