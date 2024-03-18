@@ -267,8 +267,8 @@
                 }
               ]
             }
-          },
-          "/create_video/bulk": {
+        },
+        "/create_video/bulk": {
             "post": {
               "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request data.",
               "operationId": "create_videos_create_video_bulk_post",
@@ -370,8 +370,8 @@
                 }
               ]
             }
-          },
-          "/projects/{project_id}/inference/{inference_id}/video_status": {
+        },
+        "/projects/{project_id}/inference/{inference_id}/video_status": {
             "get": {
               "operationId": "get_video_status_projects__project_id__inference__inference_id__video_status_get",
               "tags": [
@@ -459,7 +459,7 @@
                 }
               ]
             }
-          },
+        },
           "/projects/{project_id}/webhook": {
             "put": {
               "operationId": "update_project_webhook_projects__project_id__webhook_put",
