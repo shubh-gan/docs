@@ -309,11 +309,7 @@
                   "content": {
                     "application/json": {
                       "schema": {
-                        "items": {
-                            "$ref": "#/components/schemas/CreateVideoIndividualResponse"
-                          },
-                          "title": "Response For Create video Bulk",
-                          "type": "array"
+                        
                       }
                     }
                   }
@@ -632,7 +628,7 @@
                 "minLength": 1,
                 "maxLength": 1
             },
-            "CreateVideoIndividualResponse":{
+            "CreateVideoIndividialResponse":{
                 "properties": {
                     "video_url": {
                       "title": "Created At",
