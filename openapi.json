@@ -394,6 +394,7 @@
                     "format": "uuid"
                   },
                   "name": "inference_id",
+                  "description": "The inference_id of the video for fetching its video status.",
                   "in": "path"
                 },
                 {
@@ -404,7 +405,7 @@
                     },
                     "name": "project_id",
                     "in": "path"
-                  }
+                }
               ],
               "responses": {
                 "200": {
@@ -705,7 +706,7 @@
 				"access_token": {
 				  "title": "access_token",
 				  "type": "string",
-                  "description": "On successful login an access token is returned, which needs to be saved and used in the future api calls."
+                  "description": "On successful login an access token is returned, which needs to be saved and used as auth token in the future api calls."
 				},
 				"refresh_token": {
 				  "title": "refresh_token",
