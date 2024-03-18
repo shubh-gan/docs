@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "GAN studio",
   "logo": {
     "dark": "/logo/dark.svg",
