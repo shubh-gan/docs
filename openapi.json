@@ -616,6 +616,64 @@
 	},
 	"components": {
 		"schemas": {
+            "CreateVideoResponse":{
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/CreateVideoIndividialResponse"
+                },
+                "minItems": 1,
+                "maxItems": 1,
+                "minLength": 1,
+                "maxLength": 1
+            },
+            "CreateVideoIndividialResponse":{
+                "properties": {
+                    "video_url": {
+                      "title": "Created At",
+                      "type": "string"
+                    },
+                    "audio_url": {
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    "inference_id": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "unique_id": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "smart_url": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "permalink": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "title": "Description",
+                        "type": "string"
+                    }
+                  },
+                  "required": [
+                    "video_url",
+                    "audio_url",
+                    "inference_id",
+                    "project_id",
+                    "unique_id",
+                    "smart_url",
+                    "permalink",
+                    "thumbnail_url"
+                  ],
+                  "title": "CreateVideoIndividialResponse",
+                  "type": "object"
+            },
 			"SuccessResponse": {
 			  "title": "SuccessResponse",
 			  "type": "object",
