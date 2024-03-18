@@ -12,8 +12,8 @@
 	],
 	"paths": {
 		"/users/login": {
-			"description": "This endpoint can be used for login. The response is an access token which needs to be used in the Authorization header in the future API calls.",
-			"post": {
+            "post": {
+              "description": "This endpoint can be used for login. The response is an access token which needs to be used in the Authorization header in the future API calls.",
 			  "operationId": "login_users_login_post",
 			  "tags": [
 				"User"
@@ -65,8 +65,8 @@
 			}
 		},
 		"/users/create_dynamic_token_v2": {
-			"description": "This endpoint can be used to provide access tokens with a desired expiration time. Please save the token as it will be displayed only once.",
-			"post": {
+            "post": {
+              "description": "This endpoint can be used to provide access tokens with a desired expiration time. Please save the token as it will be displayed only once.",
 			  "operationId": "create_dynamic_token_v2_users_create_dynamic_token_v2_post",
 			  "tags": [
 				"User"
@@ -143,8 +143,8 @@
 			}
 		},
 		"/users/revoke_access_token_v2": {
-			"description": "This endpoint can be used to revoke the access from a token that had previously been generated.",
-			"delete": {
+            "delete": {
+                "description": "This endpoint can be used to revoke the access from a token that had previously been generated.",
                 "operationId": "revoke_access_token_v2_users_revoke_access_token_v2_delete",
                 "tags": [
                     "User"
@@ -561,8 +561,8 @@
             }
           },
           "/projects/v2": {
-            "description": "This endpoint returns a list of all projects of the user.",
-            "get": {
+              "get": {
+              "description": "This endpoint returns a list of all projects of the user.",
               "operationId": "get_projects_projects_get",
               "responses": {
                 "200": {
