@@ -704,11 +704,13 @@
 			  "properties": {
 				"access_token": {
 				  "title": "access_token",
-				  "type": "string"
+				  "type": "string",
+                  "description": "On successful login an access token is returned, which needs to be saved and used in the future"
 				},
 				"refresh_token": {
 				  "title": "refresh_token",
-				  "type": "string"
+				  "type": "string",
+                  "description": "This endpoint also returns a refresh token for the user."
 				}
 			  }
 			},
