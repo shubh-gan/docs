@@ -916,18 +916,15 @@
 			  "properties": {
 				"days": {
 				  "title": "Days",
-				  "type": "integer",
-				  "default": 0
+				  "type": "integer"
 				},
 				"hours": {
 				  "title": "Hours",
-				  "type": "integer",
-				  "default": 0
+				  "type": "integer"
 				},
 				"minutes": {
 				  "title": "Minutes",
-				  "type": "integer",
-				  "default": 0
+				  "type": "integer"
 				}
 			  }
 			},
