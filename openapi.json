@@ -217,18 +217,6 @@
               "tags": [
                 "User"
               ],
-              "parameters": [
-                {
-                  "name": "Authorization",
-                  "in": "header",
-                  "required": true,
-                  "example": "Bearer ACCESS_TOKEN",
-                  "schema": {
-                    "type": "string"
-                  },
-                  "description": "The `Authorization` header is used to authenticate with the API using your access token. Value follows the format `Bearer ACCESS_TOKEN`."
-                }
-              ],
               "summary": "List User's Dynamic Tokens",
               "responses": {
                 "200": {
@@ -274,7 +262,8 @@
               },
               "security": [
                 {
-                  "JWT": []
+                  "JWT": [],
+                  "bearerAuth":[]
                 }
               ]
             }
@@ -386,7 +375,8 @@
               },
               "security": [
                 {
-                  "JWT": []
+                  "JWT": [],
+                  "bearerAuth":[]
                 }
               ]
             }
@@ -475,60 +465,13 @@
               },
               "security": [
                 {
-                  "JWT": []
+                  "JWT": [],
+                  "bearerAuth":[]
                 }
               ]
             }
           },
           "/projects/{project_id}/webhook": {
-            "put": {
-              "operationId": "update_project_webhook_projects__project_id__webhook_put",
-              "parameters": [
-                {
-                  "in": "path",
-                  "name": "project_id",
-                  "required": true,
-                  "schema": {
-                    "title": "Project Id",
-                    "type": "string"
-                  }
-                }
-              ],
-              "requestBody": {
-                "content": {
-                  "application/json": {
-                    "schema": {
-                      "$ref": "#/components/schemas/InferenceWebhook"
-                    }
-                  }
-                },
-                "required": true
-              },
-              "responses": {
-                "200": {
-                  "content": {
-                    "application/json": {
-                      "schema": {}
-                    }
-                  },
-                  "description": "Successful Response"
-                },
-                "422": {
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "$ref": "#/components/schemas/HTTPValidationError"
-                      }
-                    }
-                  },
-                  "description": "Validation Error"
-                }
-              },
-              "summary": "Update Project Webhook",
-              "tags": [
-                "Project"
-              ]
-            },
             "post": {
               "description": "This endpoint sets up a webhook for getting the status of the videos. \n \n Videos are created in batches. We will do a POST request to the webhook that you would provide us.\n The payload is shown below.\n `data={'abc123': {'video_url':'<Video_S3_URL>','status':True, 'inference_id': 'Inference_Id'},\n 'avs3456': {'status': False, 'inference_id':'3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c', 'error': {'status_code': 503,'message': 'Failed to generate video for inference id:3eeb8a96-94fa-4c1b-b827-20dc6a2a0c3c. Please try again later!'}}` \n \n In the above example, video was successfully generated for unique_id `'abc123'` and is ready for download. Video could not be generated for unique_id `'avs3456'`. We will return error details",
               "operationId": "update_project_webhook_post_projects__project_id__webhook_post",
@@ -632,7 +575,8 @@
               },
               "security": [
                 {
-                  "JWT": []
+                  "JWT": [],
+                  "bearerAuth":[]
                 }
               ]
             }
