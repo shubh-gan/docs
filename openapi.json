@@ -1282,7 +1282,7 @@
 				"gen_status": {
 				  "title": "Gen Status",
 				  "type": "string",
-                  "description":"This indicated the current generation state of the particular inference,eg. nexrender_pending, succeeded etc.",
+                  "description":"This indicated the current generation state of the particular inference,eg. nexrender_pending, succeeded etc."
 				},
 				"video_url": {
 				  "title": "Video Url",
