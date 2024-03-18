@@ -310,9 +310,9 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/ProjectResponse"
+                          "$ref": "#/components/schemas/CreateVideoIndividialResponse"
                         },
-                        "title": "Response Get Projects Projects Get",
+                        "title": "Response To Create Video bulk",
                         "type": "array"
                       }
                     }
