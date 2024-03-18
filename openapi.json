@@ -7,7 +7,7 @@
 	},
 	"servers": [
 	  {
-		"url": "http://api.ganstudio.com"
+		"url": "https://api.ganstudio.com"
 	  }
 	],
 	"paths": {
