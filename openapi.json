@@ -70,9 +70,6 @@
 			  "parameters": [
 				{
 				  "name": "Authorization",
-                  "auth": {
-                    "method": "bearer"
-                    },
 				  "in": "header",
 				  "required": true,
 				  "example": "Bearer ACCESS_TOKEN",
