@@ -1467,7 +1467,6 @@
 			  "properties": {
 				"user_id": {
 				  "title": "User Id",
-				  "type": "string",
 				  "format": "uuid",
                   "description" :"This refers to the user's unique id."
 				},
