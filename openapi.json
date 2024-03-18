@@ -1043,7 +1043,7 @@
 				  "format": "date-time",
 				  "title": "Created At",
 				  "type": "string",
-				  "description": "This refers to the user's unique id."
+				  "description": "Creation time stamp"
 				},
 				"description": {
 				  "title": "Description",
@@ -1059,7 +1059,8 @@
 				"project_id": {
 				  "format": "uuid",
 				  "title": "Project Id",
-				  "type": "string"
+				  "type": "string",
+				  "description":"This refers to the project's unique id."
 				},
 				"status": {
 				  "title": "Status",
@@ -1085,17 +1086,20 @@
 				},
 				"title": {
 				  "title": "Title",
-				  "type": "string"
+				  "type": "string",
+				  "description" : "The title of the project is also returned in the reponse body."
 				},
 				"updated_at": {
 				  "format": "date-time",
 				  "title": "Updated At",
-				  "type": "string"
+				  "type": "string",
+				  "description" :"Updation time stamp"
 				},
 				"user_id": {
 				  "format": "uuid",
 				  "title": "User Id",
-				  "type": "string"
+				  "type": "string",
+				  "description":"This refers to the user's unique id."
 				}
 			  },
 			  "required": [
