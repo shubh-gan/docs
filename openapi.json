@@ -1103,15 +1103,29 @@
 			"DynamicTokenResponse": {
 			  "title": "DynamicTokenResponse",
 			  "required": [
-				"access_token"
+				"access_token",
+				"token_name",
+				"expiration_time",
+				"creation_time"
 			  ],
 			  "type": "object",
 			  "properties": {
 				"access_token": {
 				  "title": "Access Token",
 				  "type": "string",
-				  "default": "ACCESS_TOKEN_PLEASE_SAVE_IT",
-                  "description" : "This access token has the requested expiration time and must be saved by the user."
+                  "description" : "This access token has the requested expiration time and `must be saved` by the user."
+				},
+				"token_name":{
+					"title": "Token name",
+				  	"type": "string"
+				},
+				"expiration_time":{
+					"title":"Expiration Time",
+					"description" :"Expiration timestamp of the token."
+				},
+				"creation_time":{
+					"title" : "Creation Time",
+					"description" : "Creation timestamp of the token."
 				}
 			  },
 			  "xml": {}
