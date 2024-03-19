@@ -339,9 +339,9 @@
                   "content": {
                     "application/json": {
                       "schema": {
-                          "$ref": "#/components/schemas/CreateVideoResponse",
-						  "type":"array"
-                      }
+                          "$ref": "#/components/schemas/CreateVideoResponse"
+						},
+						"type":"array"
                     }
                   }
                 },
