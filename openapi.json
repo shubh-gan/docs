@@ -638,7 +638,7 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/ProjectResponse"
+                          "$ref": "#/components/schemas/ProjectResponseIndividial"
                         },
                         "title": "Response Get Projects Projects Get",
                         "type": "array"
@@ -1135,7 +1135,7 @@
 			},
 			"ProjectResponse": {
 			  "type": "object",
-			  "required" :["data"],
+			  "required" :["data", "size","unpublished_projects"],
 			  "properties" :{
 				"data":{
 					"title" : "data",
