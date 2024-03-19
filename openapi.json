@@ -730,7 +730,7 @@
                     "smart_url": {
                         "title": "Description",
                         "type": "string",
-						"description" : "These are the links to videos on our the landing page."
+						"description" : "These are the links to videos on our landing page."
                     },
                     "permalink": {
                         "title": "Description",
@@ -1669,7 +1669,7 @@
 				"smart_url": {
 				  "title": "Smart Url",
 				  "type": "string",
-				  "description" : "These are the links to videos on our the landing page."
+				  "description" : "These are the links to videos on our landing page."
 				},
 				"recording_script": {
 				  "title": "Recording Script",
