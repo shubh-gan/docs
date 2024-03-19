@@ -713,7 +713,7 @@
                     "project_id": {
                         "title": "Description",
                         "type": "string",
-						"description": "`project_id` is a unique identifier for a project created by the user.In a project, multiple inference videos can be generated."
+						"description": "`project_id` is a unique identifier for a project created by the user. In a project, multiple inference videos can be generated."
                     },
                     "unique_id": {
                         "title": "Description",
@@ -1489,7 +1489,7 @@
 				"smart_url": {
 				  "title": "Smart Url",
 				  "type": "string",
-				  "description" : "These are the links to videos on our landing page."
+				  "description" : "These are the links to videos hosted on our landing page."
 				},
 				"error":{
 					"title": "error",
