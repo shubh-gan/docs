@@ -1145,7 +1145,7 @@
 				  "format": "date-time",
 				  "title": "Created At",
 				  "type": "string",
-				  "description": "Creation time stamp"
+				  "description": "Creation timestamp"
 				},
 				"inference_webhook": {
 				  "$ref": "#/components/schemas/InferenceWebhook"
@@ -1192,7 +1192,7 @@
 				  "format": "date-time",
 				  "title": "Updated At",
 				  "type": "string",
-				  "description" :"Updation time stamp"
+				  "description" :"Updation timestamp"
 				},
 				"user_id": {
 				  "format": "uuid",
@@ -1638,13 +1638,13 @@
 				  "title": "Created At",
 				  "type": "string",
 				  "format": "date-time",
-				  "description" : "Creation time stamp"
+				  "description" : "Project creation timestamp"
 				},
 				"updated_at": {
 				  "title": "Updated At",
 				  "type": "string",
 				  "format": "date-time",
-				  "description" : "Updation time stamp"
+				  "description" : "Project Updation timestamp"
 				},
 				"video": {
 				  "title": "Video",
