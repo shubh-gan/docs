@@ -1138,6 +1138,7 @@
 			  "required" :["data"],
 			  "properties" :{
 				"data":{
+					"type":"array",
 					"$ref": "#/components/schemas/ProjectResponseIndividial"
 				}
 			  }
