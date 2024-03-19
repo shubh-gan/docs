@@ -1752,16 +1752,18 @@
 			  "title": "ListUserDynamicTokensIndividual",
 			  "required": [
 				"token_name",
-				"expiration_time"
+				"expiration_time",
+				"creation_time"
 			  ],
 			  "properties": {
 				"token_name": {
-				  "type": "string",
-				  "default": "<TOKEN_NAME>"
+				  "type": "string"
 				},
 				"expiration_time": {
-				  "type": "string",
-				  "default": "<EXPIRATION_TIME>"
+				  "description":"Expiration timestamp of the token."
+				},
+				"creation_time":{
+				  	"description":"Creation timestamp of the token."
 				}
 			  }
 			}
