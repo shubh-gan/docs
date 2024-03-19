@@ -1138,14 +1138,19 @@
 			  "required" :["data"],
 			  "properties" :{
 				"data":{
-					"$ref": "#/components/schemas/ProjectResponseIndividial"
+					"title" : "data",
+					"type" : "array",
+					"items":{
+						"$ref": "#/components/schemas/ProjectResponseIndividial"
+					}
 				},
 				"size":{
 					"title": "Count of total projects.",
 					"type" : "integer"
 				},
 				"unpublished_projects":{
-					"title": "Count of projects yet to be published."
+					"title": "Count of projects yet to be published.",
+					"type" : "integer"
 				}
 			  }
 			},
