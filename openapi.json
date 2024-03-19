@@ -123,6 +123,16 @@
 					}
 				  }
 				},
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
 				"500": {
 				  "description": "Process Exception",
 				  "content": {
@@ -192,6 +202,16 @@
 					}
 				  }
 				},
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
 				"500": {
 				  "description": "Process Exception",
 				  "content": {
@@ -249,6 +269,16 @@
                     }
                   }
                 },
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
                 "500": {
                   "description": "Process Exception",
                   "content": {
@@ -358,6 +388,16 @@
                     }
                   }
                 },
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
                 "500": {
                   "description": "Process Exception",
                   "content": {
@@ -439,6 +479,16 @@
                     }
                   }
                 },
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
                 "500": {
                   "description": "Failure",
                   "content": {
@@ -549,6 +599,16 @@
                     }
                   }
                 },
+				"429":{
+					"description": "Rate Limit exceeded Exception",
+					"content": {
+					  "application/json": {
+						"schema": {
+						  "$ref": "#/components/schemas/RateLimitException"
+						}
+					  }
+					}
+				},
                 "500": {
                   "description": "Process Exception",
                   "content": {
