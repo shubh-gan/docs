@@ -638,7 +638,7 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/ProjectResponseIndividial"
+                          "$ref": "#/components/schemas/ProjectResponse"
                         },
                         "title": "Response Get Projects Projects Get",
                         "type": "array"
@@ -1134,14 +1134,13 @@
 			  }
 			},
 			"ProjectResponse": {
-			  "type": "array",
-			  "items": {
-				"$ref": "#/components/schemas/ProjectResponseIndividial"
-			  },
-			  "minItems": 1,
-			  "maxItems": 1,
-			  "minLength": 1,
-			  "maxLength": 1
+			  "type": "object",
+			  "required" :["data"],
+			  "properties" :{
+				"data":{
+					"$ref": "#/components/schemas/ProjectResponseIndividial"
+				}
+			  }
 			},
 			"ProjectResponseIndividial": {
 			  "properties": {
@@ -1213,10 +1212,10 @@
 				"updated_at"
 			  ],
 			  "title": "ProjectResponse",
-			  "type": "object"
+			  "type": "array"
 			},
 			"ProjectTags": {
-				"description" : "The tags associated with the particular video.",
+			  "description" : "The tags associated with the particular video.",
 			  "properties": {
 				"colors": {
 				  "items": {
