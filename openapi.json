@@ -419,7 +419,7 @@
               "tags": [
                 "Inference"
               ],
-              "summary": "Get status for an inference_id",
+              "summary": "Get video_status",
               "description": "This endpoint can be used to fetch the status of a video by passing the `project_id` and the `inference_id` in query parameters.",
               "parameters": [
                 {
