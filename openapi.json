@@ -342,8 +342,7 @@
                         "items": {
                           "$ref": "#/components/schemas/CreateVideoResponse"
                         },
-                        "title": "Response To Create Video bulk",
-                        "type": "array"
+                        "title": "Response To Create Video bulk"
                       }
                     }
                   }
