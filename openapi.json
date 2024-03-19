@@ -641,7 +641,7 @@
                           "$ref": "#/components/schemas/ProjectResponseIndividial"
                         },
                         "title": "Response Get Projects Projects Get",
-                        "type": "object"
+                        "type": "array"
                       }
                     }
                   },
@@ -1134,25 +1134,14 @@
 			  }
 			},
 			"ProjectResponse": {
-			  "type": "object",
-			  "required" :["data", "size","unpublished_projects"],
-			  "properties" :{
-				"data":{
-					"title" : "data",
-					"type" : "array",
-					"items":{
-						"$ref": "#/components/schemas/ProjectResponseIndividial"
-					}
-				},
-				"size":{
-					"title": "Count of total projects.",
-					"type" : "integer"
-				},
-				"unpublished_projects":{
-					"title": "Count of projects yet to be published.",
-					"type" : "integer"
-				}
-			  }
+			  "type": "array",
+			  "items": {
+				"$ref": "#/components/schemas/ProjectResponseIndividial"
+			  },
+			  "minItems": 1,
+			  "maxItems": 1,
+			  "minLength": 1,
+			  "maxLength": 1
 			},
 			"ProjectResponseIndividial": {
 			  "properties": {
@@ -1224,7 +1213,7 @@
 				"updated_at"
 			  ],
 			  "title": "ProjectResponse",
-			  "type": "array"
+			  "type": "object"
 			},
 			"ProjectTags": {
 			  "description" : "The tags associated with the particular video.",
