@@ -641,7 +641,7 @@
                           "$ref": "#/components/schemas/ProjectResponseIndividial"
                         },
                         "title": "Response Get Projects Projects Get",
-                        "type": "array"
+                        "type": "object"
                       }
                     }
                   },
