@@ -606,7 +606,17 @@
                       }
                     }
                   }
-                }
+                },
+				"429":{
+				  "description": "Rate Limit exceeded Exception",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/RateLimitException"
+                      }
+                    }
+                  }
+				}
               },
               "summary": "Get Projects",
               "tags": [
@@ -972,6 +982,32 @@
 				"type": {
 				  "title": "Error Type",
 				  "type": "string"
+				}
+			  }
+			},
+			"RateLimitException":{
+			  "title": "RateLimitException",
+		      "type": "object",
+			  "required": [
+				"message",
+				"error",
+				"statusCode"
+			  ],
+			  "properties": {
+				"statusCode": {
+				  "title": "statusCode",
+				  "type": "integer",
+				  "default": "429"
+				},
+				"error": {
+				  "title": "error",
+				  "type": "string",
+				  "default": "RateLimitExceeded"
+				},
+				"message": {
+				  "title": "message",
+				  "type": "string",
+				  "default": "<Error_Message>"
 				}
 			  }
 			},
