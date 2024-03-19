@@ -708,35 +708,43 @@
                 "properties": {
                     "video_url": {
                       "title": "Created At",
-                      "type": "string"
+                      "type": "string",
+					  "description": "S3 url for the video file."
                     },
                     "audio_url": {
                       "title": "Description",
-                      "type": "string"
+                      "type": "string",
+					  "description": "S3 url for the audio file."
                     },
                     "inference_id": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description" :"`inference_id` corresponds to the video being generated corresponding to the particular unique_id(sent in the request body)."
                     },
                     "project_id": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description": "This refers to the `project_id` for which the video is being generated."
                     },
                     "unique_id": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description" : "This corresponds to the `unique_id` sent in the request body. It can be used by the user's to uniquely identify the generation status for the "
                     },
                     "smart_url": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description" : "These are the links to videos on our the landing page."
                     },
                     "permalink": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description" :"Permalinks are links to the generated inferences that do not expire."
                     },
                     "thumbnail_url": {
                         "title": "Description",
-                        "type": "string"
+                        "type": "string",
+						"description":"Link to personalized thumbnail (if enabled) else default project thumbnail"
                     }
                   },
                   "required": [
