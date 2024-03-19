@@ -1225,6 +1225,7 @@
 				  "type": "array"
 				},
 				"names": {
+				  "description" : "The tag names for the videos. These can be used while creating videos by passing the tags and there respective values in the payload.",
 				  "items": {
 					"type": "string"
 				  },
