@@ -978,6 +978,7 @@
 			"ExpiryTime": {
 			  "title": "ExpiryTime",
 			  "type": "object",
+			  "description":"This refers to the time after which your access token would expire.",
 			  "required": [
 				"minutes",
 				"hours",
@@ -1050,7 +1051,8 @@
 				  "type": "string"
 				},
 				"inference_webhook": {
-				  "$ref": "#/components/schemas/InferenceWebhook"
+				  "$ref": "#/components/schemas/InferenceWebhook",
+				  "description" : "This value corresponds to the webhook configured with this particular project."
 				},
 				"language": {
 				  "title": "Language",
@@ -1253,7 +1255,7 @@
 				"token_name": {
 				  "title": "Token Name",
 				  "type": "string",
-                  "description": "The name that you want to assign to the token must be sent with the request. A user can't request two tokens with the same name."
+                  "description": "The name that you want to assign to the token must be sent with the request. A user can't have two valid tokens with the same name."
 				}
 			  },
 			  "xml": {}
@@ -1287,7 +1289,7 @@
 				"gen_status": {
 				  "title": "Gen Status",
 				  "type": "string",
-                  "description":"This indicated the current generation state of the particular inference,eg. nexrender_pending, succeeded etc."
+                  "description":"This indicates the current generation status of the particular inference,eg. nexrender_pending, succeeded etc."
 				},
 				"video_url": {
 				  "title": "Video Url",
