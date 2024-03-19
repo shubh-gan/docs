@@ -1399,9 +1399,20 @@
 				  "type": "string",
                   "description":"This indicates the current generation status of the particular inference,eg. nexrender_pending, succeeded etc.",
 				  "enum": [
-					"PERSONALIZED",
-					"PERSONALIZED_INSTANT",
-					"NON_PERSONALIZED"
+					"PENDING",
+					"PROCESSING",
+					"SUCCEEDED",
+					"FAILED",
+					"LIPSYNC_PENDING",
+					"WEBSITE_SCROLLING_PENDING",
+					"DELETED",
+					"BLOCKED",
+					"UNKNOWN",
+					"REGENERATE_REQUIRED",
+					"WEBHOOK_TRIGGERED",
+					"NEXRENDER_PENDING",
+					"FFMPEG_PENDING",
+					"INFERENCE_POST_PROCESSING"
 				  ]
 				},
 				"video_url": {
