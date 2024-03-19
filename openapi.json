@@ -690,7 +690,8 @@
                 "type": "array",
                 "items": {
 					"$ref": "#/components/schemas/CreateVideoIndividialResponse"
-                }
+                },
+				"title":"CreateVideoResponse"
             },
             "CreateVideoIndividialResponse":{
                 "properties": {
