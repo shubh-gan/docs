@@ -691,8 +691,13 @@
 		"schemas": {
             "CreateVideoResponse":{
                 "type": "array",
-                "schema": {
-                    "$ref": "#/components/schemas/CreateVideoIndividialResponse"
+				"required" :[],
+                "items": {
+					"IndividualVideoReponse":{
+						"schema":{
+							"$ref": "#/components/schemas/CreateVideoIndividialResponse"
+						}
+					}
                 }
             },
             "CreateVideoIndividialResponse":{
