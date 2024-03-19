@@ -338,10 +338,12 @@
                   "description": "Successful Response",
                   "content": {
                     "application/json": {
-                      "schema": {
-                          "$ref": "#/components/schemas/CreateVideoResponse"
-						},
-						"type":"array"
+						"type":"array",
+						"items":{
+							"schema": {
+								"$ref": "#/components/schemas/CreateVideoResponse"
+							  }
+						}
                     }
                   }
                 },
