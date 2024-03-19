@@ -322,7 +322,7 @@
                   "content": {
                       "application/json": {
                           "schema": {
-                              "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`.\n Eg.\n ```\n[\n\t{\n\t\t\"names\": \"Manash\",\n\t\t\"unique_id\": \"abc123\"}]\n```\n In the `example`, we have used the tags: `email` and `unique_id`, depending on the case the individual query parameters would change.",
+                              "description": "The payload is a list of dictionaries, where all the parameters required for video generation have to provided along with a `unique_id`.\n Eg.\n ```\n[\n\t{\n\t\t\"names\": \"Manash\",\n\t\t\"unique_id\": \"abc123\"\n\t}\n]\n```\n In the `example`, we have used the tags: `names` and `unique_id`, depending on the case the individual query parameters would change.",
                               "items": {
                                 "$ref": "#/components/schemas/CreateVideoBulkIndividual"
                       },
