@@ -66,7 +66,7 @@
 		},
 		"/users/create_dynamic_token_v2": {
             "post": {
-              "description": "This endpoint can be used to provide access tokens with a desired expiration time.\n<strong>Please save the token as it will be displayed only once.</strong>",
+              "description": "This endpoint can be used to provide access tokens with a desired expiration time.\n <strong>Please save the token as it will be displayed only once.</strong>",
 			  "operationId": "create_dynamic_token_v2_users_create_dynamic_token_v2_post",
 			  "tags": [
 				"User"
