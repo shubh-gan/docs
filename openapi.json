@@ -637,11 +637,7 @@
                   "content": {
                     "application/json": {
                       "schema": {
-                        "items": {
                           "$ref": "#/components/schemas/GetProjectsResponseV2"
-                        },
-                        "title": "Response Get Projects Projects Get",
-                        "type": "array"
                       }
                     }
                   },
