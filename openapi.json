@@ -691,7 +691,7 @@
 		"schemas": {
             "CreateVideoResponse":{
                 "type": "array",
-				"required" :[],
+				"required" :["IndividualVideoReponse"],
                 "items": {
 					"IndividualVideoReponse":{
 						"schema":{
