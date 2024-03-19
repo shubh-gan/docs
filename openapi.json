@@ -300,7 +300,7 @@
         },
         "/create_video/bulk": {
             "post": {
-              "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request body as payload.\n This endpoint returns a list of URLs along with inference_id and the unique_id that was part of the payload. Videos can be downloaded from these URLs. The video generation process is asynchronous and hence the user needs to wait for a period of time before the links become functional. The pause time, depends on the number of videos to be generated. \nWe can get status of videos by two ways: \n1) Setting Webhook \n2) Pinging our video_status api with the inference_id (from the response of create_video api)",
+              "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request body as payload. \n \n This endpoint returns a list of URLs along with inference_id and the unique_id that was part of the payload. Videos can be downloaded from these URLs. The video generation process is asynchronous and hence the user needs to wait for a period of time before the links become functional. The pause time, depends on the number of videos to be generated. \nWe can get status of videos by two ways: \n1) Setting Webhook \n2) Pinging our video_status api with the inference_id (from the response of create_video api)",
               "operationId": "create_videos_create_video_bulk_post",
               "tags": [
                 "Create Video"
