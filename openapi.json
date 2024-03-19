@@ -1153,7 +1153,7 @@
 				},
 				"inference_webhook": {
 				  "$ref": "#/components/schemas/InferenceWebhook",
-				  "description" : "This value corresponds to the webhook configured with this particular project.",
+				  "description" : "This value corresponds to the webhook configured with this particular project."
 				},
 				"language": {
 				  "title": "Language",
