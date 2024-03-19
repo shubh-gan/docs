@@ -1416,7 +1416,7 @@
 					"title": "error",
 					"type" : "object",
 					"default" : "None",
-					"description" : "It corresponds to the error in video generation(if any). Otherwise this field in response body has a value `None`."
+					"description" : "It corresponds to the error in video generation(if any). Otherwise this field in response body has a value `null`."
 				}
 			  },
 			  "xml": {}
