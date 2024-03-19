@@ -689,7 +689,9 @@
             "CreateVideoResponse":{
                 "type": "array",
                 "items": {
-                    "$ref": "#/components/schemas/CreateVideoIndividialResponse"
+					"schema":{
+						"$ref": "#/components/schemas/CreateVideoIndividialResponse"
+					}
                 }
             },
             "CreateVideoIndividialResponse":{
