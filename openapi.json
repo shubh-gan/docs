@@ -521,7 +521,7 @@
               "tags": [
                 "Project"
               ],
-              "summary": "Set Inference Webhook",
+              "summary": "Set Webhook for video_status",
               "parameters": [
                 {
                   "required": true,
