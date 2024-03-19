@@ -1152,8 +1152,7 @@
 				  "description": "Creation time stamp"
 				},
 				"inference_webhook": {
-				  "$ref": "#/components/schemas/InferenceWebhook",
-				  "description" : "This value corresponds to the webhook configured with this particular project."
+				  "$ref": "#/components/schemas/InferenceWebhook"
 				},
 				"language": {
 				  "title": "Language",
@@ -1237,8 +1236,9 @@
 			  "type": "object"
 			},
 			"InferenceWebhook": {
-			  "title": "InferenceWebhook",
-			  "required": [
+			   "title": "InferenceWebhook",
+			   "description" : "This value corresponds to the webhook configured with this particular project.",
+			   "required": [
 				"enable",
 				"url"
 			  ],
