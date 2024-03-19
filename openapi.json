@@ -1245,8 +1245,7 @@
 				"description" : "This value corresponds to the webhook configured with this particular project.",
 				"required": [
 				 "enable",
-				 "url",
-				 "Authorization"
+				 "url"
 			   ],
 			   "type": "object",
 			   "properties": {
