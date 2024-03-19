@@ -1216,6 +1216,7 @@
 			  "type": "object"
 			},
 			"ProjectTags": {
+				"description" : "The tags associated with the particular video.",
 			  "properties": {
 				"colors": {
 				  "items": {
