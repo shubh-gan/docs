@@ -1181,7 +1181,7 @@
 				"thumbnail": {
 				  "title": "Thumbnail",
 				  "type": "string",
-				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
+				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail."
 				},
 				"title": {
 				  "title": "Title",
@@ -1405,7 +1405,7 @@
 				"thumbnail_url": {
 				  "title": "Thumbnail Url",
 				  "type": "string",
-				  "description":"Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
+				  "description":"Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail."
 				},
 				"smart_url": {
 				  "title": "Smart Url",
@@ -1561,11 +1561,13 @@
 				},
 				"size": {
 				  "title": "Size",
-				  "type": "integer"
+				  "type": "integer",
+				  "description" : "Count of projects made by the user."
 				},
 				"unpublished_projects": {
 				  "title": "Unpublished Projects",
-				  "type": "integer"
+				  "type": "integer", 
+				  "description" : "Count of unpublished projects of the user."
 				}
 			  },
 			  "xml": {}
@@ -1605,7 +1607,7 @@
 				"thumbnail": {
 				  "title": "Thumbnail",
 				  "type": "string",
-				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
+				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail."
 				},
 				"thumbnails": {
 				  "$ref": "#/components/schemas/Thumbnails",
