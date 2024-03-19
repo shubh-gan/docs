@@ -1610,8 +1610,7 @@
 				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail."
 				},
 				"thumbnails": {
-				  "$ref": "#/components/schemas/Thumbnails",
-				  "description" : "The cloudfront url of the thumbnail."
+				  "$ref": "#/components/schemas/Thumbnails"
 				},
 				"status": {
 				  "title": "Status",
@@ -1688,6 +1687,7 @@
 			"Thumbnails": {
 			  "title": "Thumbnails",
 			  "type": "object",
+			  "description" : "Cloudfront links to the thumbnails.",
 			  "properties": {
 				"thumbnail_png": {
 				  "title": "Thumbnail Png",
