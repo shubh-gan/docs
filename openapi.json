@@ -340,6 +340,8 @@
                     "application/json": {
                       "schema": {
                           "$ref": "#/components/schemas/CreateVideoResponse"
+                        },
+                        "title": "Response To Create Video bulk"
                       }
                     }
                   }
@@ -689,9 +691,7 @@
             "CreateVideoResponse":{
                 "type": "array",
                 "items": {
-					"schema":{
-						"$ref": "#/components/schemas/CreateVideoIndividialResponse"
-					}
+                    "$ref": "#/components/schemas/CreateVideoIndividialResponse"
                 }
             },
             "CreateVideoIndividialResponse":{
