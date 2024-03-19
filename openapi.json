@@ -1151,13 +1151,9 @@
 				  "type": "string",
 				  "description": "Creation time stamp"
 				},
-				"description": {
-				  "title": "Description",
-				  "type": "string"
-				},
 				"inference_webhook": {
 				  "$ref": "#/components/schemas/InferenceWebhook",
-				  "description" : "This value corresponds to the webhook configured with this particular project."
+				  "description" : "This value corresponds to the webhook configured with this particular project.",
 				},
 				"language": {
 				  "title": "Language",
@@ -1189,7 +1185,8 @@
 				},
 				"thumbnail": {
 				  "title": "Thumbnail",
-				  "type": "string"
+				  "type": "string",
+				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
 				},
 				"title": {
 				  "title": "Title",
@@ -1410,12 +1407,12 @@
 				"thumbnail_url": {
 				  "title": "Thumbnail Url",
 				  "type": "string",
-				  "description":"Link to personalized thumbnail (if enabled) else default project thumbnail"
+				  "description":"Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
 				},
 				"smart_url": {
 				  "title": "Smart Url",
 				  "type": "string",
-				  "description" : "These are the links to videos on our the landing page."
+				  "description" : "These are the links to videos on our landing page."
 				},
 				"error":{
 					"title": "error",
