@@ -1596,7 +1596,7 @@
 				"title": {
 				  "title": "Title",
 				  "type": "string",
-				  "description" : "The title of the project is also returned in the reponse body."
+				  "description" : "The title of the project is also returned in the response body."
 				},
 				"project_type": {
 				  "$ref": "#/components/schemas/ProjectType",
@@ -1604,7 +1604,8 @@
 				},
 				"thumbnail": {
 				  "title": "Thumbnail",
-				  "type": "string"
+				  "type": "string",
+				  "description": "Cloudfront link to personalized thumbnail (if enabled) else default project thumbnail"
 				},
 				"thumbnails": {
 				  "$ref": "#/components/schemas/Thumbnails",
@@ -1645,7 +1646,8 @@
 				},
 				"video": {
 				  "title": "Video",
-				  "type": "string"
+				  "type": "string",
+				  "description" :"S3 link to the project video."
 				},
 				"training_job_id": {
 				  "title": "Training Job Id",
@@ -1661,7 +1663,8 @@
 				},
 				"voice_path": {
 				  "title": "Voice Path",
-				  "type": "string"
+				  "type": "string",
+				  "description" :  "S3 link to the voice path of the project video."
 				},
 				"smart_url": {
 				  "title": "Smart Url",
