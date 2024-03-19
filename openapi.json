@@ -691,7 +691,7 @@
 		"schemas": {
             "CreateVideoResponse":{
                 "type": "array",
-                "items": {
+                "schema": {
                     "$ref": "#/components/schemas/CreateVideoIndividialResponse"
                 }
             },
