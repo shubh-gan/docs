@@ -1245,7 +1245,14 @@
 			   "description" : "This value corresponds to the webhook configured with this particular project.",
 			   "required": [
 				"enable",
-				"url"
+				"url",
+				"user_identifier",
+    			"user_password",
+				"message",
+    			"send_query_params",
+    			"send_replacement",
+    			"serialize_payload",
+    			"tags_mapping"
 			  ],
 			  "type": "object",
 			  "properties": {
@@ -1264,6 +1271,27 @@
 				  "type": "string",
 				  "default": "Bearer <Insert_the_token_here>",
 				  "description": "The token must follow the `bearer` format."
+				},
+    			"user_identifier":{
+					"type":"string"
+				},
+    			"user_password":{
+					"type":"string"
+				},
+				"message": {
+					"type" :"string"
+				},
+    			"send_query_params": {
+					"type":"boolean"
+				},
+    			"send_replacement":{
+					"type":"boolean"
+				},
+    			"serialize_payload":{
+					"type":"boolean"
+				},
+    			"tags_mapping":{
+					"type":"object"
 				}
 			  },
 			  "xml": {}
@@ -1397,7 +1425,7 @@
 				"gen_status": {
 				  "title": "Gen Status",
 				  "type": "string",
-                  "description":"This indicates the current generation status of the particular inference,eg. nexrender_pending, succeeded etc.",
+                  "description":"This indicates the current generation status of the particular video.",
 				  "enum": [
 					"PENDING",
 					"PROCESSING",
