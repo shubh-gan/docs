@@ -339,10 +339,7 @@
                   "content": {
                     "application/json": {
                       "schema": {
-                        "items": {
                           "$ref": "#/components/schemas/CreateVideoResponse"
-                        },
-                        "title": "Response To Create Video bulk"
                       }
                     }
                   }
