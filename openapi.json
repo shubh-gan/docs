@@ -338,9 +338,9 @@
                   "description": "Successful Response",
                   "content": {
                     "application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/CreateVideoResponse"
-							  }
+						"schema": {
+							"$ref": "#/components/schemas/CreateVideoResponse"
+						}
                     }
                   }
                 },
@@ -420,7 +420,7 @@
                 "Inference"
               ],
               "summary": "Get status for an inference_id",
-              "description": "This endpoint can be used to fetch the status of a video by passing the `inference_id` as the query parameter.",
+              "description": "This endpoint can be used to fetch the status of a video by passing the `project_id` and the `inference_id` in query parameters.",
               "parameters": [
                 {
                   "required": true,
@@ -1397,7 +1397,12 @@
 				"gen_status": {
 				  "title": "Gen Status",
 				  "type": "string",
-                  "description":"This indicates the current generation status of the particular inference,eg. nexrender_pending, succeeded etc."
+                  "description":"This indicates the current generation status of the particular inference,eg. nexrender_pending, succeeded etc.",
+				  "enum": [
+					"PERSONALIZED",
+					"PERSONALIZED_INSTANT",
+					"NON_PERSONALIZED"
+				  ]
 				},
 				"video_url": {
 				  "title": "Video Url",
@@ -1407,7 +1412,7 @@
 				"permalink": {
 				  "title": "Permalink",
 				  "type": "string",
-				  "description":"Permalinks are links to the generated inferences that do not expire."
+				  "description":"Permalinks are links to the generated videos that do not expire."
 				},
 				"thumbnail_url": {
 				  "title": "Thumbnail Url",
