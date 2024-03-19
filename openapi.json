@@ -693,7 +693,11 @@
                 "type": "array",
                 "items": {
 					"$ref": "#/components/schemas/CreateVideoIndividialResponse"
-                }
+                },
+				"minItems": 1,
+			  	"maxItems": 1,
+			  	"minLength": 1,
+			  	"maxLength": 1
             },
             "CreateVideoIndividialResponse":{
                 "properties": {
