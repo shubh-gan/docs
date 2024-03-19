@@ -308,7 +308,7 @@
               "summary": "Create Videos",
               "parameters": [
                 {
-                  "description": "To create the videos, we need the project_id.",
+                  "description": "To create the videos, we need the project_id, which is the unique identifier for a user's project in our systems.",
                   "required": true,
                   "schema": {
                     "title": "Project Id",
@@ -340,7 +340,7 @@
                     "application/json": {
                       "schema": {
                         "items": {
-                          "$ref": "#/components/schemas/CreateVideoIndividialResponse"
+                          "$ref": "#/components/schemas/CreateVideoResponse"
                         },
                         "title": "Response To Create Video bulk",
                         "type": "array"
@@ -694,11 +694,7 @@
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/CreateVideoIndividialResponse"
-                },
-                "minItems": 1,
-                "maxItems": 1,
-                "minLength": 1,
-                "maxLength": 1
+                }
             },
             "CreateVideoIndividialResponse":{
                 "properties": {
@@ -715,22 +711,22 @@
                     "inference_id": {
                         "title": "Description",
                         "type": "string",
-						"description" :"`inference_id` corresponds to the video being generated corresponding to the particular unique_id(sent in the request body)."
+						"description": "`inference_id` is a unique identifer to map the generated videos with the users."
                     },
                     "project_id": {
                         "title": "Description",
                         "type": "string",
-						"description": "This refers to the `project_id` for which the video is being generated."
+						"description": "`project_id` is a unique identifier for a project created by the user, under a project multiple inference videos can be generated."
                     },
                     "unique_id": {
                         "title": "Description",
                         "type": "string",
-						"description" : "This corresponds to the `unique_id` sent in the request body. It can be used by the user's to uniquely identify the generation status for the "
+						"description" : "This corresponds to the `unique_id` sent in the request body. It can be used by the user's to uniquely identify the generation status for a video with the particular tags."
                     },
                     "smart_url": {
                         "title": "Description",
                         "type": "string",
-						"description" : "These are the links to videos on our landing page."
+						"description" : "These are the links to videos hosted on our landing page, ."
                     },
                     "permalink": {
                         "title": "Description",
