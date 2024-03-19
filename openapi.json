@@ -300,7 +300,7 @@
         },
         "/create_video/bulk": {
             "post": {
-              "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request data.",
+              "description": "Using this endpoint you can create the videos in bulk, by passing the tags and their values in request body as payload.",
               "operationId": "create_videos_create_video_bulk_post",
               "tags": [
                 "Create Video"
@@ -770,7 +770,8 @@
 				"success": {
 				  "title": "success",
 				  "type": "boolean",
-				  "default": true
+				  "default": true,
+				  "description" : "Success status of the revoke request made by the user."
 				}
 			  }
 			},
@@ -1374,7 +1375,7 @@
 				"token_name": {
 				  "title": "Token Name",
 				  "type": "string",
-                  "description":"The name of the token from which the access needs to be removed. This is a compulsory field in the request body."
+                  "description":"The name of the token from which the access needs to be revoked. This is a compulsory field in the request body."
 				}
 			  },
 			  "xml": {}
@@ -1398,19 +1399,22 @@
 				"video_url": {
 				  "title": "Video Url",
 				  "type": "string",
-                  "description":""
+                  "description":"S3 url for the video file."
 				},
 				"permalink": {
 				  "title": "Permalink",
-				  "type": "string"
+				  "type": "string",
+				  "description":"Permalinks are links to the generated inferences that do not expire."
 				},
 				"thumbnail_url": {
 				  "title": "Thumbnail Url",
-				  "type": "string"
+				  "type": "string",
+				  "description":"Link to personalized thumbnail (if enabled) else default project thumbnail"
 				},
 				"smart_url": {
 				  "title": "Smart Url",
-				  "type": "string"
+				  "type": "string",
+				  "description" : "These are the links to videos on our the landing page."
 				}
 			  },
 			  "xml": {}
@@ -1659,7 +1663,8 @@
 				},
 				"smart_url": {
 				  "title": "Smart Url",
-				  "type": "string"
+				  "type": "string",
+				  "description" : "These are the links to videos on our the landing page."
 				},
 				"recording_script": {
 				  "title": "Recording Script",
