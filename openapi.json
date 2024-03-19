@@ -1387,7 +1387,8 @@
 				"video_url",
 				"permalink",
 				"thumbnail_url",
-				"smart_url"
+				"smart_url",
+				"error"
 			  ],
 			  "type": "object",
 			  "properties": {
@@ -1415,6 +1416,12 @@
 				  "title": "Smart Url",
 				  "type": "string",
 				  "description" : "These are the links to videos on our the landing page."
+				},
+				"error":{
+					"title": "error",
+					"type" : "object",
+					"default" : "None",
+					"description" : "It corresponds to the error in video generation(if any)."
 				}
 			  },
 			  "xml": {}
