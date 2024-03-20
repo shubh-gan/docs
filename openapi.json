@@ -7,7 +7,7 @@
 	},
 	"servers": [
 	  {
-		"url": "https://api.gan.studio"
+		"url": "https://api.gan.ai"
 	  }
 	],
 	"paths": {
